@@ -42,10 +42,176 @@ body {
   border-radius: 4px;
 }
 
+/* ============================================
+   GRID BACKGROUND STYLES
+   ============================================ */
+
+/* Grid Basic - Subtle */
 .grid-bg {
-  background-image: linear-gradient(rgba(30, 64, 175, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 64, 175, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-image: linear-gradient(rgba(96, 165, 250, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.15) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Grid Spotlight - Center fade */
+.grid-bg-spotlight {
+  background-image: linear-gradient(rgba(96, 165, 250, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.35) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 50% 60% at 50% 50%,
+    black 0%,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 50% 60% at 50% 50%,
+    black 0%,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
+  );
+}
+
+/* ============================================
+   GRID 3D HOLOGRAPHIC
+   ============================================ */
+
+/* Layer 1: Main 3D Grid dengan Glow */
+.grid-3d {
+  background-image:
+    linear-gradient(rgba(96, 165, 250, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform-style: preserve-3d;
+  -webkit-mask-image: radial-gradient(
+    ellipse 60% 70% at 50% 50%,
+    black 0%,
+    rgba(0, 0, 0, 0.85) 35%,
+    rgba(0, 0, 0, 0.4) 65%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 60% 70% at 50% 50%,
+    black 0%,
+    rgba(0, 0, 0, 0.85) 35%,
+    rgba(0, 0, 0, 0.4) 65%,
+    transparent 100%
+  );
+}
+
+/* Layer 2: Glow Layer (di belakang) */
+.grid-3d-glow {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.6) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.6) 2px, transparent 2px);
+  background-size: 60px 60px;
+  filter: blur(8px);
+  -webkit-mask-image: radial-gradient(
+    ellipse 55% 65% at 50% 50%,
+    black 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    transparent 80%
+  );
+  mask-image: radial-gradient(
+    ellipse 55% 65% at 50% 50%,
+    black 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    transparent 80%
+  );
+}
+
+/* Layer 3: Bright Center Lines (paling jelas) */
+.grid-3d-bright {
+  background-image:
+    linear-gradient(rgba(147, 197, 253, 0.8) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 197, 253, 0.8) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 25% 30% at 50% 50%,
+    black 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 25% 30% at 50% 50%,
+    black 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    transparent 100%
+  );
+}
+
+/* Perspective Container untuk efek 3D Tilt */
+.grid-3d-perspective {
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+.grid-3d-perspective-inner {
+  transform: rotateX(8deg);
+  transform-origin: 50% 50%;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Scanning Line Animation */
+@keyframes scan-vertical {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+
+@keyframes scan-horizontal {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+.scan-line-vertical {
+  animation: scan-vertical 6s ease-in-out infinite;
+}
+
+.scan-line-horizontal {
+  animation: scan-horizontal 8s ease-in-out infinite;
+}
+
+/* Grid Pulse Animation */
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.grid-pulse-anim {
+  animation: grid-pulse 4s ease-in-out infinite;
 }
 
 .text-gradient {

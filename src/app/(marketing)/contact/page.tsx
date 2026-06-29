@@ -1,49 +1,24 @@
-import { Container } from "@/components/layout/container";
-import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { CtaBanner } from "@/components/shared/cta-banner";
+import type { Metadata } from "next";
+import { ContactHero } from "@/components/contact/contact-hero";
+import { ContactInfo } from "@/components/contact/contact-info";
+import { ContactForm } from "@/components/contact/contact-form";
+import { ContactMap } from "@/components/contact/contact-map";
+import { ContactFaq } from "@/components/contact/contact-faq";
 
-export const metadata = {
-  title: "Hubungi Kami - PT Waluya Nusantara",
-  description: "Tim kami siap membantu Anda.",
+export const metadata: Metadata = {
+  title: "Kontak - PT Waluya Istana Nusantara",
+  description:
+    "Hubungi tim PT Waluya Istana Nusantara untuk konsultasi IT, request quotation, atau pertanyaan layanan. Kami siap membantu mengembangkan bisnis Anda.",
 };
 
-export default function Page() {
+export default function ContactPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-background-primary pb-24 pt-36">
-        <div className="absolute inset-0 grid-bg" />
-        <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-brand-primary/10 blur-3xl" />
-        <Container>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-secondary">
-            Hubungi Kami
-          </p>
-          <h1 className="mb-5 text-4xl font-extrabold tracking-tight text-content-primary md:text-5xl lg:text-6xl">
-            Hubungi Kami
-          </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-content-secondary">
-            Tim kami siap membantu Anda.
-          </p>
-        </Container>
-      </section>
-
-      <SectionWrapper>
-        <Container>
-          <div className="rounded-2xl border border-border-subtle bg-background-surface p-12 text-center">
-            <p className="text-content-tertiary">
-              Konten halaman ini akan segera ditambahkan. Struktur dan routing sudah aktif.
-            </p>
-          </div>
-        </Container>
-      </SectionWrapper>
-
-      <CtaBanner
-        title="Siap Memulai?"
-        description="Tim kami siap membantu Anda memilih solusi yang tepat."
-        primaryLabel="Lihat Paket"
-        primaryHref="/pricing"
-        secondaryLabel="Hubungi Kami"
-        secondaryHref="/contact"
-      />
+      <ContactHero />
+      <ContactInfo />
+      <ContactForm />
+      <ContactMap />
+      <ContactFaq />
     </>
   );
 }

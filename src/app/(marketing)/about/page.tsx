@@ -1,48 +1,34 @@
-import { Container } from "@/components/layout/container";
-import { SectionWrapper } from "@/components/layout/section-wrapper";
+import type { Metadata } from "next";
+import { AboutHero } from "@/components/about/about-hero";
+import { AboutStory } from "@/components/about/about-story";
+import { AboutVisionMission } from "@/components/about/about-vision-mission";
+import { AboutValues } from "@/components/about/about-values";
+import { AboutTimeline } from "@/components/about/about-timeline";
+import { AboutTeam } from "@/components/about/about-team";
 import { CtaBanner } from "@/components/shared/cta-banner";
 
-export const metadata = {
-  title: "Tentang Kami - PT Waluya Nusantara",
-  description: "Pelajari lebih lanjut tentang PT Waluya Nusantara.",
+export const metadata: Metadata = {
+  title: "Tentang Kami - PT Waluya Istana Nusantara",
+  description:
+    "Mengenal lebih dekat PT Waluya Istana Nusantara (WIN), perusahaan One Stop IT Solution sejak 2015. Visi, misi, dan perjalanan kami dalam menyediakan solusi IT terpadu di Indonesia.",
 };
 
-export default function Page() {
+export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-background-primary pb-24 pt-36">
-        <div className="absolute inset-0 grid-bg" />
-        <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-brand-primary/10 blur-3xl" />
-        <Container>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-secondary">
-            Tentang Kami
-          </p>
-          <h1 className="mb-5 text-4xl font-extrabold tracking-tight text-content-primary md:text-5xl lg:text-6xl">
-            Tentang Kami
-          </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-content-secondary">
-            Pelajari lebih lanjut tentang PT Waluya Nusantara.
-          </p>
-        </Container>
-      </section>
-
-      <SectionWrapper>
-        <Container>
-          <div className="rounded-2xl border border-border-subtle bg-background-surface p-12 text-center">
-            <p className="text-content-tertiary">
-              Konten halaman ini akan segera ditambahkan. Struktur dan routing sudah aktif.
-            </p>
-          </div>
-        </Container>
-      </SectionWrapper>
-
+      <AboutHero />
+      <AboutStory />
+      <AboutVisionMission />
+      <AboutValues />
+      <AboutTimeline />
+      <AboutTeam />
       <CtaBanner
-        title="Siap Memulai?"
-        description="Tim kami siap membantu Anda memilih solusi yang tepat."
-        primaryLabel="Lihat Paket"
-        primaryHref="/pricing"
-        secondaryLabel="Hubungi Kami"
-        secondaryHref="/contact"
+        title="Siap Berkolaborasi dengan Tim Profesional?"
+        description="Mari diskusikan bagaimana kami dapat membantu mengembangkan bisnis Anda dengan solusi IT terbaik."
+        primaryLabel="Hubungi Kami"
+        primaryHref="/contact"
+        secondaryLabel="Lihat Layanan"
+        secondaryHref="/services"
       />
     </>
   );
