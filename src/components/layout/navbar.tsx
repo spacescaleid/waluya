@@ -28,10 +28,15 @@ export function Navbar() {
             : "bg-transparent"
         )}
       >
-        <nav className="mx-auto flex h-16 max-w-container items-center justify-between px-6 md:px-10 lg:px-20">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-primary to-brand-dark">
-              <span className="text-sm font-extrabold text-white">W</span>
+        <nav className="mx-auto flex h-20 max-w-container items-center justify-between px-6 md:px-10 lg:px-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative h-12 w-12 overflow-hidden rounded-lg bg-white p-1.5 shadow-md transition-transform group-hover:scale-105">
+              <img
+                src="/images/logo/logo.jpeg"
+                alt="PT Waluya Istana Nusantara"
+                className="h-full w-full object-contain"
+              />
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-base font-bold tracking-tight text-content-primary">
@@ -43,6 +48,7 @@ export function Navbar() {
             </div>
           </Link>
 
+          {/* Desktop Menu */}
           <ul className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
               <li key={item.href}>
@@ -56,6 +62,7 @@ export function Navbar() {
             ))}
           </ul>
 
+          {/* CTA Button */}
           <div className="hidden items-center gap-3 lg:flex">
             <Link
               href="/contact"
@@ -65,6 +72,7 @@ export function Navbar() {
             </Link>
           </div>
 
+          {/* Mobile Toggle */}
           <button
             onClick={() => setOpen(!open)}
             className="flex items-center justify-center rounded-md p-2 text-content-secondary lg:hidden"
@@ -75,6 +83,7 @@ export function Navbar() {
         </nav>
       </header>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -82,7 +91,7 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-background-primary pt-16 lg:hidden"
+            className="fixed inset-0 z-40 bg-background-primary pt-20 lg:hidden"
           >
             <div className="flex h-full flex-col px-6 py-8">
               <ul className="flex flex-col gap-1">
