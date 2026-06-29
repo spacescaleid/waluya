@@ -8,6 +8,7 @@ import { SectionHeader } from "@/components/shared/section-header";
 const partners = [
   {
     name: "Cisco",
+    slug: "cisco",
     description:
       "Pemimpin global dalam networking, security, dan collaboration. Solusi enterprise-grade untuk infrastruktur jaringan.",
     capabilities: ["Router", "Switch", "Access Point", "SDWAN"],
@@ -15,6 +16,7 @@ const partners = [
   },
   {
     name: "Citrix",
+    slug: "citrix",
     description:
       "Spesialis virtualisasi, networking, dan cloud computing untuk transformasi digital perusahaan modern.",
     capabilities: ["Router", "Router Cellular", "Access Point", "SDWAN", "Security"],
@@ -22,6 +24,7 @@ const partners = [
   },
   {
     name: "Mikrotik",
+    slug: "mikrotik",
     description:
       "Solusi router dan switch berkualitas dengan harga kompetitif, populer untuk ISP dan enterprise networking.",
     capabilities: ["Router", "Switch", "Access Point"],
@@ -29,6 +32,7 @@ const partners = [
   },
   {
     name: "Maipu",
+    slug: "maipu",
     description:
       "Vendor jaringan dari Tiongkok yang menyediakan solusi networking enterprise dengan fitur lengkap dan reliable.",
     capabilities: ["Router", "Switch", "Router Cellular", "SDWAN"],
@@ -36,6 +40,7 @@ const partners = [
   },
   {
     name: "Fortinet",
+    slug: "fortinet",
     description:
       "Pemimpin global dalam cybersecurity dengan solusi firewall, SDWAN, dan security appliance terintegrasi.",
     capabilities: ["Router", "SDWAN", "Security Appliance"],
@@ -43,6 +48,7 @@ const partners = [
   },
   {
     name: "Ubiquiti",
+    slug: "ubiquiti",
     description:
       "Solusi networking dan wireless berkualitas tinggi untuk enterprise dengan ekosistem terintegrasi UniFi.",
     capabilities: ["Switch", "Access Point", "SDWAN"],
@@ -85,19 +91,30 @@ export function PartnersGrid() {
               />
 
               <div className="relative">
-                {/* Logo Placeholder */}
-                <div className="mb-5 flex h-20 items-center justify-center rounded-xl border border-border-subtle bg-background-elevated p-4">
+                {/* Logo Container */}
+                <div className="mb-5 flex h-24 items-center justify-center rounded-xl border border-border-subtle bg-white p-4">
                   <img
-                    src={`/images/partners/${partner.name.toLowerCase()}.png`}
+                    src={`/public/images/partners/${partner.slug}.svg`}
                     alt={`${partner.name} logo`}
-                    className="max-h-12 max-w-[120px] object-contain"
+                    className="max-h-14 max-w-[140px] object-contain"
                     onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                      const parent = e.currentTarget.parentElement!;
-                      const fallback = document.createElement("div");
-                      fallback.className = "text-2xl font-extrabold text-content-primary";
-                      fallback.textContent = partner.name;
-                      parent.appendChild(fallback);
+                      // Coba PNG kalau SVG tidak ada
+                      const img = e.currentTarget;
+                      if (img.src.endsWith(".svg")) {
+                        img.src = `/images/partners/${partner.slug}.png`;
+                      } else {
+                        // Fallback ke text kalau PNG juga tidak ada
+                        img.style.display = "none";
+                        const parent = img.parentElement!;
+                        const existingFallback = parent.querySelector(".logo-fallback");
+                        if (!existingFallback) {
+                          const fallback = document.createElement("div");
+                          fallback.className =
+                            "logo-fallback text-2xl font-extrabold text-gray-800";
+                          fallback.textContent = partner.name;
+                          parent.appendChild(fallback);
+                        }
+                      }
                     }}
                   />
                 </div>
@@ -139,24 +156,6 @@ export function PartnersGrid() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Logo Upload Note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mx-auto mt-10 max-w-2xl rounded-xl border border-dashed border-border-default bg-background-surface/50 p-5 text-center"
-        >
-          <p className="text-sm text-content-tertiary">
-            <span className="font-semibold text-content-secondary">💡 Logo Partners:</span>{" "}
-            Letakkan logo di{" "}
-            <code className="rounded bg-background-elevated px-1.5 py-0.5 text-xs text-brand-tertiary">
-              /public/images/partners/
-            </code>{" "}
-            (format: cisco.png, citrix.png, mikrotik.png, dst.)
-          </p>
         </motion.div>
       </Container>
     </SectionWrapper>
