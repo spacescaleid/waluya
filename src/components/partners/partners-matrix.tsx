@@ -16,12 +16,12 @@ const capabilities = [
 ];
 
 const matrix = [
-  { brand: "Cisco", values: [true, true, false, true, true, false] },
-  { brand: "Citrix", values: [true, false, true, true, true, true] },
-  { brand: "Mikrotik", values: [true, true, false, true, false, false] },
-  { brand: "Maipu", values: [true, true, true, false, true, false] },
-  { brand: "Fortinet", values: [true, false, false, false, true, true] },
-  { brand: "Ubiquiti", values: [false, true, false, true, true, false] },
+  { brand: "Cisco", slug: "cisco", values: [true, true, false, true, true, false] },
+  { brand: "Citrix", slug: "citrix", values: [true, false, true, true, true, true] },
+  { brand: "Mikrotik", slug: "mikrotik", values: [true, true, false, true, false, false] },
+  { brand: "Maipu", slug: "maipu", values: [true, true, true, false, true, false] },
+  { brand: "Fortinet", slug: "fortinet", values: [true, false, false, false, true, true] },
+  { brand: "Ubiquiti", slug: "ubiquiti", values: [false, true, false, true, true, false] },
 ];
 
 export function PartnersMatrix() {
@@ -71,13 +71,16 @@ export function PartnersMatrix() {
                     transition={{ duration: 0.4, delay: rowIndex * 0.05 }}
                     className="border-b border-border-subtle transition-colors hover:bg-background-elevated/50 last:border-b-0"
                   >
-                    {/* Brand Name */}
+                    {/* Brand Logo + Name */}
                     <td className="p-4 md:p-5">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-primary/10">
-                          <span className="text-sm font-bold text-brand-tertiary">
-                            {row.brand.charAt(0)}
-                          </span>
+                        {/* Logo Container */}
+                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-border-subtle bg-white p-1.5 md:h-12 md:w-12 md:p-2">
+                          <img
+                            src={"/images/partners/" + row.slug + ".svg"}
+                            alt={row.brand + " logo"}
+                            className="max-h-full max-w-full object-contain"
+                          />
                         </div>
                         <span className="font-semibold text-content-primary">
                           {row.brand}

@@ -94,7 +94,7 @@ export function PartnersGrid() {
                 {/* Logo Container */}
                 <div className="mb-5 flex h-24 items-center justify-center rounded-xl border border-border-subtle bg-white p-4">
                   <img
-                    src={`/public/images/partners/${partner.slug}.svg`}
+                    src={`/images/partners/${partner.slug}.svg`}
                     alt={`${partner.name} logo`}
                     className="max-h-14 max-w-[140px] object-contain"
                     onError={(e) => {
