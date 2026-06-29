@@ -40,32 +40,37 @@ export function Footer() {
             <ul className="flex flex-col gap-3">
               <li>
                 <a
-                  href={"mailto:" + SITE_CONFIG.email}
-                  className="flex items-center gap-2 text-sm text-content-secondary hover:text-content-primary"
+                  href={`mailto:${SITE_CONFIG.email}`}
+                  className="flex items-center gap-2 text-sm text-content-secondary hover:text-content-primary transition-colors"
                 >
-                  <Mail className="h-4 w-4 text-brand-secondary" />
-                  {SITE_CONFIG.email}
+                  <Mail className="h-4 w-4 flex-shrink-0 text-brand-secondary" />
+                  <span className="break-all">{SITE_CONFIG.email}</span>
                 </a>
               </li>
               <li>
                 <a
-                  href={"tel:" + SITE_CONFIG.phone}
-                  className="flex items-center gap-2 text-sm text-content-secondary hover:text-content-primary"
+                  href={`tel:${SITE_CONFIG.phoneRaw}`}
+                  className="flex items-center gap-2 text-sm text-content-secondary hover:text-content-primary transition-colors"
                 >
-                  <Phone className="h-4 w-4 text-brand-secondary" />
-                  {SITE_CONFIG.phone}
+                  <Phone className="h-4 w-4 flex-shrink-0 text-brand-secondary" />
+                  <span>{SITE_CONFIG.phone}</span>
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-2 text-sm text-content-secondary">
+                <a
+                  href={SITE_CONFIG.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-sm text-content-secondary hover:text-content-primary transition-colors"
+                >
                   <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-secondary" />
-                  {SITE_CONFIG.address}
-                </div>
+                  <span>{SITE_CONFIG.addressFull}</span>
+                </a>
               </li>
               <li>
                 <div className="flex items-center gap-2 text-sm text-content-tertiary">
-                  <Calendar className="h-4 w-4 text-brand-secondary" />
-                  Akta No. 9 — {SITE_CONFIG.founded}
+                  <Calendar className="h-4 w-4 flex-shrink-0 text-brand-secondary" />
+                  <span>Akta No. 9 — {SITE_CONFIG.founded}</span>
                 </div>
               </li>
             </ul>
@@ -80,7 +85,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/colocation"
-                  className="text-content-secondary hover:text-content-primary"
+                  className="text-content-secondary hover:text-content-primary transition-colors"
                 >
                   Colocation
                 </Link>
@@ -88,7 +93,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/network-monitoring"
-                  className="text-content-secondary hover:text-content-primary"
+                  className="text-content-secondary hover:text-content-primary transition-colors"
                 >
                   Network Monitoring
                 </Link>
@@ -96,7 +101,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/system-integrator"
-                  className="text-content-secondary hover:text-content-primary"
+                  className="text-content-secondary hover:text-content-primary transition-colors"
                 >
                   System Integrator
                 </Link>
@@ -104,7 +109,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/managed-service"
-                  className="text-content-secondary hover:text-content-primary"
+                  className="text-content-secondary hover:text-content-primary transition-colors"
                 >
                   Managed Service
                 </Link>
@@ -121,23 +126,15 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-content-secondary hover:text-content-primary"
+                  className="text-content-secondary hover:text-content-primary transition-colors"
                 >
                   Tentang Kami
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/network"
-                  className="text-content-secondary hover:text-content-primary"
-                >
-                  Jaringan
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/partners"
-                  className="text-content-secondary hover:text-content-primary"
+                  className="text-content-secondary hover:text-content-primary transition-colors"
                 >
                   Partners
                 </Link>
@@ -145,7 +142,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-content-secondary hover:text-content-primary"
+                  className="text-content-secondary hover:text-content-primary transition-colors"
                 >
                   Kontak
                 </Link>

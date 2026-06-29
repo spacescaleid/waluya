@@ -4,6 +4,8 @@ import { ContactInfo } from "@/components/contact/contact-info";
 import { ContactForm } from "@/components/contact/contact-form";
 import { ContactMap } from "@/components/contact/contact-map";
 import { ContactFaq } from "@/components/contact/contact-faq";
+import { FloatingWhatsApp } from "@/components/shared/floating-whatsapp";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Kontak - PT Waluya Istana Nusantara",
@@ -19,6 +21,10 @@ export default function ContactPage() {
       <ContactForm />
       <ContactMap />
       <ContactFaq />
+      <FloatingWhatsApp
+        phoneNumber={SITE_CONFIG.whatsapp}
+        message="Halo, saya tertarik dengan layanan PT Waluya Istana Nusantara. Bisa konsultasi?"
+      />
     </>
   );
 }
