@@ -28,24 +28,19 @@ export function Navbar() {
             : "bg-transparent"
         )}
       >
-        <nav className="mx-auto flex h-20 max-w-container items-center justify-between px-6 md:px-10 lg:px-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative h-12 w-12 overflow-hidden rounded-lg bg-white p-1.5 shadow-md transition-transform group-hover:scale-105">
+        <nav className="mx-auto flex h-20 max-w-container items-center justify-between gap-3 px-4 sm:px-6 md:px-10 lg:px-20">
+          {/* Logo - Center Aligned */}
+          <Link href="/" className="group flex min-w-0 items-center gap-3">
+            <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded-lg bg-white p-1.5 shadow-md transition-transform group-hover:scale-105 sm:h-12 sm:w-12">
               <img
                 src="/images/logo/logo.jpeg"
                 alt="PT Waluya Istana Nusantara"
                 className="h-full w-full object-contain"
               />
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-base font-bold tracking-tight text-content-primary">
-                Waluya
-              </span>
-              <span className="text-[10px] font-medium uppercase tracking-wider text-content-tertiary">
-                Istana Nusantara
-              </span>
-            </div>
+            <span className="truncate text-[11px] font-extrabold tracking-tight text-content-primary sm:text-sm md:text-base lg:text-2xl">
+              PT Waluya Istana Nusantara
+            </span>
           </Link>
 
           {/* Desktop Menu */}
@@ -66,7 +61,7 @@ export function Navbar() {
           <div className="hidden items-center gap-3 lg:flex">
             <Link
               href="/contact"
-              className="rounded-md bg-brand-primary px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-brand-dark hover:shadow-glow"
+              className="whitespace-nowrap rounded-md bg-brand-primary px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-brand-dark hover:shadow-glow"
             >
               Konsultasi Gratis
             </Link>
@@ -75,7 +70,7 @@ export function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="flex items-center justify-center rounded-md p-2 text-content-secondary lg:hidden"
+            className="flex flex-shrink-0 items-center justify-center rounded-md p-2 text-content-secondary lg:hidden"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
