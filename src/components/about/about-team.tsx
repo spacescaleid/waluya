@@ -9,25 +9,25 @@ import { SectionHeader } from "@/components/shared/section-header";
 // GANTI dengan data tim asli nanti
 const teamMembers = [
   {
-    name: "Nama Direktur",
+    name: "Alex",
     position: "Director",
-    photo: "/images/team/director.jpg",
+    photo: "/images/team/alex.jpeg",
     bio: "Memimpin visi strategis perusahaan dengan pengalaman puluhan tahun di industri IT.",
     linkedin: "#",
     email: "director@waluya.co.id",
   },
   {
-    name: "Nama Manager",
-    position: "Operations Manager",
-    photo: "/images/team/operations.jpg",
+    name: "Rafie Diyaul Haq",
+    position: "Team IT",
+    photo: "/images/team/rapi.jpeg",
     bio: "Memastikan operasional perusahaan berjalan lancar dan efisien di seluruh divisi.",
     linkedin: "#",
     email: "ops@waluya.co.id",
   },
   {
-    name: "Nama Lead",
-    position: "Technical Lead",
-    photo: "/images/team/tech-lead.jpg",
+    name: "Farros Al Warisi",
+    position: "Team IT",
+    photo: "/images/team/farros.jpeg",
     bio: "Memimpin tim teknis dalam mengimplementasikan solusi IT terbaik untuk klien.",
     linkedin: "#",
     email: "tech@waluya.co.id",

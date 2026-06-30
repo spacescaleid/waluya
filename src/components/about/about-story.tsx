@@ -17,7 +17,7 @@ export function AboutStory() {
     <SectionWrapper className="bg-background-secondary">
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-          {/* Left: Image Placeholder */}
+          {/* Left: Office Image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -27,25 +27,14 @@ export function AboutStory() {
           >
             {/* Main Image */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border-subtle bg-background-surface">
-              {/* GANTI src="" dengan path foto kantor */}
               <img
                 src="/images/office.jpg"
                 alt="Kantor PT Waluya Istana Nusantara"
                 className="h-full w-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                  e.currentTarget.parentElement!.classList.add(
-                    "flex",
-                    "items-center",
-                    "justify-center"
-                  );
-                  const fallback = document.createElement("div");
-                  fallback.className = "text-center p-8";
-                  fallback.innerHTML =
-                    '<div class="text-content-tertiary text-sm">[ Foto Kantor ]</div><div class="text-xs text-content-tertiary mt-2 opacity-60">Letakkan foto di /public/images/office.jpg</div>';
-                  e.currentTarget.parentElement!.appendChild(fallback);
-                }}
               />
+
+              {/* Gradient Overlay untuk efek dramatic */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background-primary/40 via-transparent to-transparent" />
             </div>
 
             {/* Floating Card - Years of Experience */}
