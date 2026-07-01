@@ -19,7 +19,7 @@ const teamMembers = [
   {
     name: "Rafie Dhiyaulhaq",
     position: "Team IT",
-    photo: "/images/team/rapi.jpeg",
+    photo: "/images/team/rafie.jpeg",
     bio: "Mengembangkan dan memelihara sistem untuk memastikan layanan berjalan optimal.",
     linkedin: "#",
     email: "Coorporate@waluya.co.id",
@@ -35,7 +35,7 @@ const teamMembers = [
   {
     name: "Nama Manager",
     position: "Business Development",
-    photo: "/images/team/business.jpg",
+    photo: "/images/team/neng.jpeg",
     bio: "Membangun kemitraan strategis dan mengembangkan bisnis ke pasar yang lebih luas.",
     linkedin: "#",
     email: "business@waluya.co.id",

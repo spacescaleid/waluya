@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
   phoneRaw: "08119660647",
   whatsapp: "6281196606470",
   address: "Cipanas, Cianjur, Jawa Barat, Indonesia",
-  addressFull: "Jl. Raya Cipanas, Cianjur, Jawa Barat, Indonesia",
+  addressFull: "JL Loji Timur RT 01 RW 17 Desa Cipanas Kecamatan Cipanas Kab Cianjur 43253",
   addressShort: "Cipanas, Cianjur",
   coordinates: {
     lat: -6.7411244,
