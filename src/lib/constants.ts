@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   fullName: "PT Waluya Istana Nusantara (WIN)",
   description:
     "One Stop IT Solution untuk segala permasalahan Teknologi Informasi. Internet, Colocation, System Integrator, Network Monitoring, dan Managed Service.",
-  url: "https://waluya.co.id",
+  url: "https://waluya.com",
   email: "Coorporate@waluya.co.id",
   phone: "0811-9660-647",
   phoneRaw: "08119660647",
@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
     lat: -6.7411244,
     lng: 107.0404601,
   },
-  googleMapsUrl: "https://www.google.com/maps/place/PT.+CORE+DIGITAL+NETWORK+(CDN)/@-6.7411244,107.0378852,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69b3002390cccb:0x5c6e1a370d91c8a3!8m2!3d-6.7411244!4d107.0404601",
+  googleMapsUrl: "https://www.google.com/maps/place/IDC+3D/@-6.253439,106.8301275,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f3cc4231a211:0xefc8bf84d953496b!8m2!3d-6.253439!4d106.8327024!16s%2Fg%2F11lglf37_4?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D",
   founded: "21 Maret 2015",
   foundedYear: "2015",
   tagline: "One Stop IT Solution untuk Bisnis Anda.",

@@ -134,23 +134,6 @@ export function AboutTeam() {
           ))}
         </motion.div>
 
-        {/* Note for owner */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mx-auto mt-12 max-w-2xl rounded-xl border border-dashed border-border-default bg-background-surface/50 p-5 text-center"
-        >
-          <p className="text-sm text-content-tertiary">
-            <span className="font-semibold text-content-secondary">💡 Catatan:</span>{" "}
-            Foto tim dapat ditambahkan di folder{" "}
-            <code className="rounded bg-background-elevated px-1.5 py-0.5 text-xs text-brand-tertiary">
-              /public/images/team/
-            </code>{" "}
-            dengan nama file sesuai data di komponen.
-          </p>
-        </motion.div>
       </Container>
     </SectionWrapper>
   );
